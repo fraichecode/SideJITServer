@@ -14,8 +14,6 @@ jobs:
 
       matrix:
         os:
-          - macos-latest
-          - ubuntu-latest
           - windows-latest
 
     runs-on: ${{ matrix.os }}
@@ -71,6 +69,3 @@ jobs:
         if: ${{ runner.os == 'Windows' }}
         run: ./build/*.exe --version
 
-      - name: Check if executable runs (.bin)
-        if: ${{ runner.os == 'macOS' || runner.os == 'Linux' }}
-        run: ./build/*.bin --version
